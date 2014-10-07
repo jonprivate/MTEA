@@ -1,0 +1,28 @@
+/* hyper link */
+a {
+	text-decoration: none;
+}
+
+/************************
+ HEADER
+ ************************/
+.tophead h1, .tophead h2 {
+	color: green;
+	text-align: center;
+}
+
+.topbar {
+	text-align: center;
+}
+
+.topbar ul li{
+	text-decoration: none;
+	display: inline-block;
+}
+
+/************************
+ BODY 
+ ************************/
+body {
+	background-color: orange;
+}
