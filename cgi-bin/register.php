@@ -1,10 +1,8 @@
 <html>
 <body style="background-color: orange;">
-hello 0<br/>
 <!--Greeting the user-->
-	Hi <?php echo htmlspecialchars($_POST['username']); ?>.<br/>
-	Your email address: <?php echo htmlspecialchars($_POST['email']; ?><br/>
-hello 1<br/>
+	Hi <?php echo "{$_POST['username']}"; ?>.<br/>
+	Your email: <?php echo "{$_POST['email']}"; ?><br/>
 
 <!--Interact with database-->
 	<?php
@@ -12,7 +10,7 @@ hello 1<br/>
 	$db = new SQLite3('users.db') or die('Unable to open database');
 	$username = $_POST['username'];
 	$email = $_POST['email'];
-	$password = $_POST['email'];
+	$password = $_POST['password'];
 
 	// list database content before insertion
 	$result = $db->query('SELECT * FROM users') or die('Query failed');
