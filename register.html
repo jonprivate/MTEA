@@ -21,24 +21,17 @@
 			<h1>Mella Tea</h1>
 			<h2>Enjoy a cup of life!</h2>
 		</a>
-		<nav class="topbar">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="personal.html">Personal</a></li>
-				<li><a href="forum.html">Forum</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		<nav>
 	</header>
 
 	<section id="demo">
-		<script type="text/javascript">
-		document.write("<i>Hello World!</i>");
-		</script>
-		<br/>
-		<a href="register.html">register here</a>
-		<a href="login.html">login here</a>
-		<br/>
+		<h3>Register</h3>
+		<p>Please enter your info:</p>
+		<form method="post" action="cgi-bin/register.php">
+		Username: <input name="username" type=text size="50"/><br/>
+		Email: <input name="email" type=text size="50"/><br/>
+		Password: <input name="password" type="password" size="50"/><br/>
+		<input type="submit"/> <input type="reset"/>
+		</form>
 	</section>
 
 	<footer>
