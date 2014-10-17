@@ -6,16 +6,21 @@ a {
 /************************
  HEADER
  ************************/
+.tophead {
+	float: left;
+}
 .tophead h1, .tophead h2 {
 	color: green;
-	text-align: center;
 }
-
+#toplogo {
+	float: left;
+}
 .topbar {
 	text-align: center;
 }
 
 .topbar ul li{
+	border-right: 1px solid #C6EC8C;
 	text-decoration: none;
 	display: inline-block;
 }
@@ -24,5 +29,6 @@ a {
  BODY 
  ************************/
 body {
+	clear: both;
 	background-color: orange;
 }
