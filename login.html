@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-------------------
+  Header part
+  ------------------>
 <head>
 	<meta charset="utf-8">
 	<title>Mella-tea, enjoy a cup of life</title>
+	<link rel="stylesheet" href="CSS/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Indie+Flower|Poiret+One|Josefin+Sans|Gloria+Hallelujah|Pacifico|Dancing+Script|Coming+Soon|Fredoka+One|Playball|Permanent+Marker|Architects+Daughter|Rock+Salt|Crafty+Girls|Reenie+Beanie|Pinyon+Script|Satisfy|Kaushan+Script|Marck+Script|Tangerine' rel='stylesheet' type='text/css'>
+	<!--
+	<script type="text/javascript" src="simplemethods.js"></script>
+	-->
 </head>
 
-<body style="background-color: orange">
+<!-------------------
+  Body part
+  ------------------>
+<body>
 	<header class="tophead">
 		<a href="index.html">
-		<h1>Mella Tea</h1>
-		<h2>Enjoy a cup of life!</h2>
+		<img id="toplogo" src="images/coffee.gif" alt="coffee logo">
+			<h1>Mella Tea, enjoy a cup of life !</h1>
 		</a>
+		<div id="reg-log">
+			<a href="register.html">register</a>
+			<a href="login.html">login</a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="personal.html">Personal</a></li>
+				<li><a href="forum.html">Forum</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		<nav>
+		
 	</header>
-
 	<section>
-		<h3>login</h3>
-		<p>Please enter your username and password:</p>
+		<div class="body-title-font">
+		<h3 class="body-title-font">Log in</h3>
 		<form method="post" action="cgi-bin/login.php">
-		Username: <input name="username" type="text" size=50/><br/>
-		Password: <input name="password" type="password" size=50/><br/>
-		<input type="submit"/> <input type="reset"/>
+		<input class="type-in" name="username" type="text" size=50 placeholder="Username"/><br/>
+		<input class="type-in" name="password" type="password" size=50 placeholder="Password"/><br/>
+		<input id="submit-form" type="submit" value="Sign in"/>
 		</form>
+		</div>
 	</section>
 
 	<footer>
