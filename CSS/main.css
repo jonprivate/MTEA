@@ -7,28 +7,62 @@ a {
  HEADER
  ************************/
 .tophead {
-	float: left;
+	white-space: nowrap;
 }
-.tophead h1, .tophead h2 {
-	color: green;
-}
+
 #toplogo {
+	height: 200px;
 	float: left;
 }
-.topbar {
+
+.tophead h1{
+	color: #a45e00;
+	position: relative;
+	top: 70px;
+	left: 30px;
+	font-family: 'Rock Salt', cursive;
+	font-size: 2.5em;
+}
+
+#reg-log {
+	width: 200px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+#reg-log a {
+	display: inline-block;
+	padding: 0 20px;
+	color: #a45e00;
+}
+
+nav {
+	clear: both;
+	background-color: #a45e00;
 	text-align: center;
 }
 
-.topbar ul li{
-	border-right: 1px solid #C6EC8C;
+nav li{
 	text-decoration: none;
 	display: inline-block;
+	margin: 0 20px;
+}
+
+nav a{
+	color: #ffb95b;
+	font-family: 'Coming Soon', cursive;
+	font-size: 1.2em;
 }
 
 /************************
  BODY 
  ************************/
 body {
-	clear: both;
 	background-color: orange;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
 }
