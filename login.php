@@ -23,12 +23,12 @@
 		</a>
 		<h1>Mella Tea, enjoy a cup of life !</h1>
 		<div id="reg-log">
-			<a href="register.html">register</a>
-			<a href="login.html">login</a>
+			<a href="register.php">register</a>
+			<a href="login.php">login</a>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="personal.html">Personal</a></li>
 				<li><a href="forum.html">Forum</a></li>
 				<li><a href="contact.html">Contact</a></li>
@@ -36,8 +36,34 @@
 		<nav>
 		
 	</header>
-
 	<section>
+	<?php
+		$form_login = <<<EOD
+			<div class="body-title-font">
+			<h3 class="body-title-font">Log in</h3>
+			<form method="post" action="cgi-bin/login.php">
+				<input class="type-in" name="username" type="text" size=50 placeholder="Username"/><br/>
+				<input class="type-in" name="password" type="password" size=50 placeholder="Password"/><br/>
+				<input id="submit-form" type="submit" value="Sign in"/>
+			</form>
+			</div>
+EOD;
+		$cookie_name = "sid";
+		if(!isset($_COOKIE[$cookie_name])) {
+			echo $form_login;
+		} else {
+			$db = new SQLite3('cgi-bin/users.db') or die('Unable to open database');
+			$sid = $_COOKIE[$cookie_name];
+			$check = "SELECT * FROM users WHERE sessionID = '$sid'";
+			$result = $db->query($check) or die('xxxk');
+			echo $result->numColumns;
+			if($result->fetchArray()) {
+				echo "welcome";
+			} else {
+				echo $form_login;
+			}
+		}
+		?>
 		
 	</section>
 
