@@ -99,9 +99,14 @@ div.body-title-font {
 #submit-form:hover {
 	background-color: #a45e00;
 	color: #ffb95b;
+	cursor: pointer;
 }
 
 footer {
 	position: fixed;
 	bottom: 0;
+}
+
+a:hover {
+	cursor: pointer;
 }
