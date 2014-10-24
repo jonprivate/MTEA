@@ -40,30 +40,26 @@ include 'check_status.php';
 	<section>
 		<?php
 		if(!$uid_isset) {
-			echo "not signed in";
+			echo "<div>not signed in</div>";
 		} else {
 			if($uid_isvalid) {
-				echo "welcome";
+				echo "<div>welcome</div>";
 			} else {
-				echo "sorry, session error";
+				echo "<div>sorry, session error</div>";
 			}
 		}
 		?>
 		<div class="img">
-		 <a target="_blank" href="klematis_big.htm"><img src="images/milk_tea/tea1.jpg" alt="tea 1" width="110" height="90"></a>
-		 <div class="desc">Add a description of the image here</div>
+		 <a target="_blank" href="images/milk_tea/tea1.jpg"><img src="images/milk_tea/tea1.jpg" alt="tea 1" width="440" height="360"></a>
 		</div>
 		<div class="img">
-		 <a target="_blank" href="klematis2_big.htm"><img src="images/milk_tea/tea2.jpg" alt="tea 2" width="110" height="90"></a>
-		 <div class="desc">Add a description of the image here</div>
+		 <a target="_blank" href="images/milk_tea/tea2.jpg"><img src="images/milk_tea/tea2.jpg" alt="tea 2" width="440" height="360"></a>
 		</div>
 		<div class="img">
-		 <a target="_blank" href="klematis3_big.htm"><img src="images/milk_tea/tea3.jpg" alt="tea 3" width="110" height="90"></a>
-		 <div class="desc">Add a description of the image here</div>
+		 <a target="_blank" href="images/milk_tea/tea3.jpg"><img src="images/milk_tea/tea3.jpg" alt="tea 3" width="440" height="360"></a>
 		</div>
 		<div class="img">
-		 <a target="_blank" href="klematis4_big.htm"><img src="images/milk_tea/tea4.jpg" alt="tea 4" width="110" height="90"></a>
-		 <div class="desc">Add a description of the image here</div>
+		 <a target="_blank" href="images/milk_tea/tea4.jpg"><img src="images/milk_tea/tea4.jpg" alt="tea 4" width="440" height="360"></a>
 		</div>
 	</section>
 
