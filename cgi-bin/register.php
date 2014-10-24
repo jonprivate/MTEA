@@ -1,5 +1,5 @@
 <?php
-include 'check_status.php';
+include '../check_status.php';
 ?>
 
 <!DOCTYPE html>
