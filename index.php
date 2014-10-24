@@ -49,6 +49,22 @@ include 'check_status.php';
 			}
 		}
 		?>
+		<div class="img">
+		 <a target="_blank" href="klematis_big.htm"><img src="images/milk_tea/tea1.jpg" alt="tea 1" width="110" height="90"></a>
+		 <div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="img">
+		 <a target="_blank" href="klematis2_big.htm"><img src="images/milk_tea/tea2.jpg" alt="tea 2" width="110" height="90"></a>
+		 <div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="img">
+		 <a target="_blank" href="klematis3_big.htm"><img src="images/milk_tea/tea3.jpg" alt="tea 3" width="110" height="90"></a>
+		 <div class="desc">Add a description of the image here</div>
+		</div>
+		<div class="img">
+		 <a target="_blank" href="klematis4_big.htm"><img src="images/milk_tea/tea4.jpg" alt="tea 4" width="110" height="90"></a>
+		 <div class="desc">Add a description of the image here</div>
+		</div>
 	</section>
 
 	<footer>
