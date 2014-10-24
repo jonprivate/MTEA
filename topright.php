@@ -1,10 +1,10 @@
 <?php
-if($sid_isset && $sid_isvalid) {
+if($uid_isset && $uid_isvalid) {
 	$greet_up = <<<EOD
 	<div id="reg-log">
 
 EOD;
-	$greet = $greet_up . "Hi, " . $sid . "!<br/>";
+	$greet = $greet_up . "Hi, " . $uid . "!<br/>";
 	$greet_down = <<<EOD
 
 	</div>
@@ -18,7 +18,7 @@ EOD;
 		<a href="register.php">register</a>
 		<a href="login.php">login</a>
 	</div>
-	
+
 EOD;
 	echo $reg_log;
 }

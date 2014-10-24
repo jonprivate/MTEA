@@ -1,21 +1,5 @@
 <?php
-$cookie_name = "sid";
-$sid_isset = false;
-$sid_isvalid = false;
-if(!isset($_COOKIE[$cookie_name])) {
-	$sid_isset = false;
-} else {
-	$sid_isset = true;
-	$db = new SQLite3('cgi-bin/users.db') or die('Unable to open database');
-	$sid = $_COOKIE[$cookie_name];
-	$check = "SELECT * FROM users WHERE sessionID = '$sid'";
-	$result = $db->query($check) or die('xxxk');
-	if($result->fetchArray()) {
-		$sid_isvalid = true;
-	} else {
-		$sid_isvalid = false;
-	}
-}
+include 'check_status.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +24,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 		</a>
 		<h1>Mella Tea, enjoy a cup of life !</h1>
 		<?php
-		include 'topright.php';
+		include '../topright.php';
 		?>
 		<nav>
 			<ul>
@@ -55,7 +39,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 	<section>
 
 	<?php
-	if(!$sid_isset || !$sid_isvalid) {
+	if(!$uid_isset || !$uid_isvalid) {
 		// access database and posted data
 		$db = new SQLite3('users.db') or die('Unable to open database');
 		$username = $_POST['username'];
@@ -67,19 +51,9 @@ if(!isset($_COOKIE[$cookie_name])) {
 		if($row = $result->fetchArray())
 		{
 			echo "Hello $username, welcome back!";
-			$cookie_name = "user";
+			$cookie_name = "uid";
 			$cookie_value = $username; 
 			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-			$cookie_name = "sid";
-			$cookie_value = uniqid(); 
-			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-			$query = <<<EOD
-			UPDATE users SET sessionID = '$cookie_value' WHERE username = '$username';
-EOD;
-			echo "<br/>";
-			echo $query;
-			echo "<br/>";
-			$db->exec($query) or die("Unable to set session id for user $username");
 
 		} else
 		{

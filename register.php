@@ -1,21 +1,5 @@
 <?php
-$cookie_name = "sid";
-$sid_isset = false;
-$sid_isvalid = false;
-if(!isset($_COOKIE[$cookie_name])) {
-	$sid_isset = false;
-} else {
-	$sid_isset = true;
-	$db = new SQLite3('cgi-bin/users.db') or die('Unable to open database');
-	$sid = $_COOKIE[$cookie_name];
-	$check = "SELECT * FROM users WHERE sessionID = '$sid'";
-	$result = $db->query($check) or die('xxxk');
-	if($result->fetchArray()) {
-		$sid_isvalid = true;
-	} else {
-		$sid_isvalid = false;
-	}
-}
+include 'check_status.php';
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +49,10 @@ if(!isset($_COOKIE[$cookie_name])) {
 		</form>
 		</div>	
 EOD;
-		if(!$sid_isset) {
+		if(!$uid_isset) {
 			echo $form_reg;
 		} else {
-			if($sid_isvalid) {
+			if($uid_isvalid) {
 				echo "welcome";
 			} else {
 				echo $form_reg;
