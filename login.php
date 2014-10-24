@@ -28,9 +28,6 @@ if(!isset($_COOKIE[$cookie_name])) {
 	<title>Mella-tea, enjoy a cup of life</title>
 	<link rel="stylesheet" href="CSS/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Indie+Flower|Poiret+One|Josefin+Sans|Gloria+Hallelujah|Pacifico|Dancing+Script|Coming+Soon|Fredoka+One|Playball|Permanent+Marker|Architects+Daughter|Rock+Salt|Crafty+Girls|Reenie+Beanie|Pinyon+Script|Satisfy|Kaushan+Script|Marck+Script|Tangerine' rel='stylesheet' type='text/css'>
-	<!--
-	<script type="text/javascript" src="simplemethods.js"></script>
-	-->
 </head>
 
 <!--

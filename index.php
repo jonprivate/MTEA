@@ -55,7 +55,6 @@ if(!isset($_COOKIE[$cookie_name])) {
 
 	<section>
 		<?php
-		$cookie_name = "sid";
 		if(!$sid_isset) {
 			echo "not signed in";
 		} else {
