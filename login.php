@@ -1,8 +1,28 @@
+<?php
+$cookie_name = "sid";
+$sid_isset = false;
+$sid_isvalid = false;
+if(!isset($_COOKIE[$cookie_name])) {
+	$sid_isset = false;
+} else {
+	$sid_isset = true;
+	$db = new SQLite3('cgi-bin/users.db') or die('Unable to open database');
+	$sid = $_COOKIE[$cookie_name];
+	$check = "SELECT * FROM users WHERE sessionID = '$sid'";
+	$result = $db->query($check) or die('xxxk');
+	if($result->fetchArray()) {
+		$sid_isvalid = true;
+	} else {
+		$sid_isvalid = false;
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<!-------------------
+<!--
   Header part
-  ------------------>
+  -->
 <head>
 	<meta charset="utf-8">
 	<title>Mella-tea, enjoy a cup of life</title>
@@ -13,19 +33,18 @@
 	-->
 </head>
 
-<!-------------------
+<!--
   Body part
-  ------------------>
+  -->
 <body>
 	<header class="tophead">
 		<a href="index.html">
 		<img id="toplogo" src="images/coffee.gif" alt="coffee logo">
 		</a>
 		<h1>Mella Tea, enjoy a cup of life !</h1>
-		<div id="reg-log">
-			<a href="register.php">register</a>
-			<a href="login.php">login</a>
-		</div>
+		<?php
+		include 'topright.php';
+		?>
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
@@ -37,7 +56,7 @@
 		
 	</header>
 	<section>
-	<?php
+		<?php
 		$form_login = <<<EOD
 			<div class="body-title-font">
 			<h3 class="body-title-font">Log in</h3>
@@ -48,16 +67,10 @@
 			</form>
 			</div>
 EOD;
-		$cookie_name = "sid";
-		if(!isset($_COOKIE[$cookie_name])) {
+		if(!$sid_isset) {
 			echo $form_login;
 		} else {
-			$db = new SQLite3('cgi-bin/users.db') or die('Unable to open database');
-			$sid = $_COOKIE[$cookie_name];
-			$check = "SELECT * FROM users WHERE sessionID = '$sid'";
-			$result = $db->query($check) or die('xxxk');
-			echo $result->numColumns;
-			if($result->fetchArray()) {
+			if($sid_isvalid) {
 				echo "welcome";
 			} else {
 				echo $form_login;
