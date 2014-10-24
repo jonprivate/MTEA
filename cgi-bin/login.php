@@ -1,5 +1,5 @@
 <?php
-include '../check_status.php';
+include 'check_status.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ include '../check_status.php';
 <head>
 	<meta charset="utf-8">
 	<title>Mella-tea, enjoy a cup of life</title>
-	<link rel="stylesheet" href="CSS/main.css">
+	<link rel="stylesheet" href="../CSS/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Indie+Flower|Poiret+One|Josefin+Sans|Gloria+Hallelujah|Pacifico|Dancing+Script|Coming+Soon|Fredoka+One|Playball|Permanent+Marker|Architects+Daughter|Rock+Salt|Crafty+Girls|Reenie+Beanie|Pinyon+Script|Satisfy|Kaushan+Script|Marck+Script|Tangerine' rel='stylesheet' type='text/css'>
 </head>
 
@@ -24,7 +24,7 @@ include '../check_status.php';
 		</a>
 		<h1>Mella Tea, enjoy a cup of life !</h1>
 		<?php
-		include '../topright.php';
+		include 'topright.php';
 		?>
 		<nav>
 			<ul>
@@ -65,10 +65,7 @@ EOD;
 			echo $link;
 		}	
 		echo "<br/>";
-	} else {
-		echo "welcome";
-	}
-	
+	}	
 	?>
 	</section>
 

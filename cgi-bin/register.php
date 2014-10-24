@@ -1,5 +1,5 @@
 <?php
-include '../check_status.php';
+include 'check_status.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ include '../check_status.php';
 <head>
 	<meta charset="utf-8">
 	<title>Mella-tea, enjoy a cup of life</title>
-	<link rel="stylesheet" href="CSS/main.css">
+	<link rel="stylesheet" href="../CSS/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Indie+Flower|Poiret+One|Josefin+Sans|Gloria+Hallelujah|Pacifico|Dancing+Script|Coming+Soon|Fredoka+One|Playball|Permanent+Marker|Architects+Daughter|Rock+Salt|Crafty+Girls|Reenie+Beanie|Pinyon+Script|Satisfy|Kaushan+Script|Marck+Script|Tangerine' rel='stylesheet' type='text/css'>
 </head>
 
@@ -19,19 +19,19 @@ include '../check_status.php';
   -->
 <body>
 	<header class="tophead">
-		<a href="index.php">
-		<img id="toplogo" src="images/coffee.gif" alt="coffee logo">
+		<a href="../index.php">
+		<img id="toplogo" src="../images/coffee.gif" alt="coffee logo">
 		</a>
 		<h1>Mella Tea, enjoy a cup of life !</h1>
 		<?php
-		include '../topright.php';
+		include 'topright.php';
 		?>
 		<nav>
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="personal.html">Personal</a></li>
-				<li><a href="forum.html">Forum</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="../index.php">Home</a></li>
+				<li><a href="../personal.html">Personal</a></li>
+				<li><a href="../forum.html">Forum</a></li>
+				<li><a href="../contact.html">Contact</a></li>
 			</ul>
 		<nav>
 		
@@ -69,8 +69,6 @@ EOD;
 			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 		}
 		echo "<br/>";
-	} else {
-		echo "welcome";
 	}
 	?>
 	</section>
