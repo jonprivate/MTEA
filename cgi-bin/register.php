@@ -70,6 +70,11 @@ EOD;
 		}
 		$db->close();
 		echo "<br/>";
+		/* Redirect browser */
+		header("Location: http://jiong-liu.rochestercs.org/");
+
+		/* Make sure that code below does not get executed when we redirect. */
+		exit;
 	}
 	?>
 	</section>

@@ -4,7 +4,7 @@ if($uid_isset && $uid_isvalid) {
 	<div id="reg-log">
 
 EOD;
-	$greet = $greet_up . "Hi, " . $uid . "! <a href='changeset.php'>settings</a> <a href='logout.php'>logout</a><br/>";
+	$greet = $greet_up . "Hi, " . $uid . "! <br/><a href='changeset.php'>settings</a> <a href='logout.php'>logout</a><br/>";
 	$greet_down = <<<EOD
 
 	</div>

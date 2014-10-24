@@ -1,3 +1,7 @@
+<?php
+include 'check_status.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--

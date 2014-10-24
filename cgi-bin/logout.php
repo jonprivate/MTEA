@@ -2,7 +2,7 @@
 $cookie_name = "uid";
 unset($_COOKIE[$cookie_name]);
 // empty value and expiration one hour before
-$res = setcookie($cookie_name, '', time() - 3600);
+$res = setcookie($cookie_name, '', time() - 3600, "/");
 
 /* Redirect browser */
 header("Location: http://jiong-liu.rochestercs.org/");
