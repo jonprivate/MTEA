@@ -39,34 +39,25 @@ include 'check_status.php';
 	<section>
 
 	<?php
+	$form_reg = <<<EOD
+		<div class="body-title-font">
+		<h3 class="body-title-font">Update your password</h3>
+		<form method="post" action="./update.php">
+		<input class="type-in" name="old_password" type="password" size="50" placeholder="Old password"/><br/>
+		<input class="type-in" name="new_password" type="password" size="50" placeholder="New password"/><br/>
+		<input id="submit-form" type="submit" value="Update"/>
+		</form>
+		</div>
+EOD;
 	if(!$uid_isset || !$uid_isvalid) {
 		// access database and posted data
-		$db = new SQLite3('users.db') or die('Unable to open database');
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		
-		// check if the user already registered
-		$check = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-		$result = $db->query($check);
-		if($row = $result->fetchArray())
-		{
-			echo "Hello $username, welcome back!";
-			$cookie_name = "uid";
-			$cookie_value = $username; 
-			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-
-		} else
-		{
-			echo "Sorry, but your username or password is wrong.";
-			echo "<br/>";
-			$link = <<<EOD
-			<a href="../register.php">You can register here :)</a>
+		$link = <<<EOD
+		<a href="../login.php">Please first log in :)</a>
 EOD;
 			echo $link;
-		}
-		$db->close();
-		echo "<br/>";
-	}	
+	} else {
+		echo $form_reg;
+	}
 	?>
 	</section>
 

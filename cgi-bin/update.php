@@ -1,7 +1,3 @@
-<?php
-include 'check_status.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <!--
@@ -39,34 +35,22 @@ include 'check_status.php';
 	<section>
 
 	<?php
-	if(!$uid_isset || !$uid_isvalid) {
-		// access database and posted data
-		$db = new SQLite3('users.db') or die('Unable to open database');
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		
-		// check if the user already registered
-		$check = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-		$result = $db->query($check);
-		if($row = $result->fetchArray())
-		{
-			echo "Hello $username, welcome back!";
-			$cookie_name = "uid";
-			$cookie_value = $username; 
-			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-
-		} else
-		{
-			echo "Sorry, but your username or password is wrong.";
-			echo "<br/>";
-			$link = <<<EOD
-			<a href="../register.php">You can register here :)</a>
-EOD;
-			echo $link;
-		}
-		$db->close();
-		echo "<br/>";
-	}	
+	$cookie_name = "uid";
+	$username = $_COOKIE[$cookie_name];
+	$old_password = $_POST['old_password'];
+	$new_password = $_POST['new_password'];
+	// check if the user already registered
+	$db = new SQLite3('users.db') or die('Unable to open database');
+	$check = "SELECT * FROM users WHERE username = '$username' AND password = '$old_password'";
+	$result = $db->query($check);
+	if($row = $result->fetchArray()) {
+		$update = "UPDATE users SET password = '$new_password' WHERE username = '$username'";
+		$db->exec($update) or die('Unable to set the password');
+		echo "Your new password has been set";
+	} else {
+		echo "Sorry, the old password is not correct, please try again <a href='./changeset.php'>here</a>";
+	}
+	$db->close();
 	?>
 	</section>
 
@@ -76,5 +60,3 @@ EOD;
 
 </body>
 </html>
-
-
