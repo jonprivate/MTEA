@@ -1,66 +1,52 @@
 <?php
-include 'check_status.php';
+    require_once __DIR__ . '/../global.php';
+    require_once 'cgi-bin/check_status.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<!--
-  Header part
-  -->
-<head>
-	<meta charset="utf-8">
-	<title>Mella-tea, enjoy a cup of life</title>
-	<link rel="stylesheet" href="../CSS/main.css">
-	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Indie+Flower|Poiret+One|Josefin+Sans|Gloria+Hallelujah|Pacifico|Dancing+Script|Coming+Soon|Fredoka+One|Playball|Permanent+Marker|Architects+Daughter|Rock+Salt|Crafty+Girls|Reenie+Beanie|Pinyon+Script|Satisfy|Kaushan+Script|Marck+Script|Tangerine' rel='stylesheet' type='text/css'>
-</head>
+    <!--
+    Header part
+    -->
+    <?php
+        require 'parts/head.php';
+    ?>
 
-<!--
-  Body part
-  -->
-<body>
-	<header class="tophead">
-		<a href="../index.php">
-		<img id="toplogo" src="../images/coffee.gif" alt="coffee logo">
-		</a>
-		<h1>Mella Tea, enjoy a cup of life !</h1>
-		<?php
-		include 'topright.php';
-		?>
-		<nav>
-			<ul>
-				<li><a href="../index.php">Home</a></li>
-				<li><a href="../personal.html">Personal</a></li>
-				<li><a href="../forum.html">Forum</a></li>
-				<li><a href="../contact.html">Contact</a></li>
-			</ul>
-		<nav>
-		
-	</header>
-	<section>
+    <!--
+    Body part
+    -->
+    <body>
+        <?php
+            require 'parts/header.php';
+        ?>
 
-	<?php
-	$cookie_name = "uid";
-	$username = $_COOKIE[$cookie_name];
-	$old_password = $_POST['old_password'];
-	$new_password = $_POST['new_password'];
-	// check if the user already registered
-	$db = new SQLite3('users.db') or die('Unable to open database');
-	$check = "SELECT * FROM users WHERE username = '$username' AND password = '$old_password'";
-	$result = $db->query($check);
-	if($row = $result->fetchArray()) {
-		$update = "UPDATE users SET password = '$new_password' WHERE username = '$username'";
-		$db->exec($update) or die('Unable to set the password');
-		echo "Your new password has been set";
-	} else {
-		echo "Sorry, the old password is not correct, please try again <a href='./changeset.php'>here</a>";
-	}
-	$db->close();
-	?>
-	</section>
+        <section>
+            <?php
+                $cookie_name = "uid";
+                $username = $_COOKIE[$cookie_name];
+                $old_password = $_POST['old_password'];
+                $new_password = $_POST['new_password'];
+                // check if the user already registered
+                require_once 'cgi-bin/db_query.php';
+                $db_name = 'jiongliu_users';
+                $table_name = 'users';
+                $conn = connectToDB($db_name);
+                $item_name1 = 'username';
+                $item_name2 = 'password';
+                if(checkTable2($conn, $table_name, $item_name1, $username, $item_name2, $old_password)) {
+                    updateTable($conn, $table_name, $item_name2, $new_password, $item_name1, $username);
+                    echo "Your new password has been set";
+                } else {
+                    echo "Sorry, the old password is not correct, please try again <a href='/changeset.php'>here</a>";
+                }
+                $db->close();
+            ?>
+        </section>
 
-	<footer>
-		<p>&copy; 2014 Jiong Liu and Juncheng Feng.</p>
-	</footer>
+        <?php
+            require 'parts/footer.php';
+        ?>
 
-</body>
+    </body>
 </html>
+

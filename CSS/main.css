@@ -1,143 +1,130 @@
-/* hyper link */
+/****************Some global attributes****************/
 a {
-	text-decoration: none;
-}
-
-/************************
- HEADER
- ************************/
-.tophead {
-	white-space: nowrap;
-}
-
-#toplogo {
-	height: 200px;
-	float: left;
-}
-
-.tophead h1{
-	color: #a45e00;
-	position: relative;
-	top: 70px;
-	left: 30px;
-	font-family: 'Rock Salt', cursive;
-	font-size: 2.5em;
-}
-
-#reg-log {
-	width: 200px;
-	position: absolute;
-	right: 10px;
-	top: 10px;
-}
-
-#reg-log a {
-	display: inline-block;
-	padding: 0 20px;
-	color: #a45e00;
-}
-
-nav {
-	clear: both;
-	background-color: #a45e00;
-	text-align: center;
-}
-
-nav li{
-	text-decoration: none;
-	display: inline-block;
-	margin: 0 20px;
-}
-
-nav a{
-	color: #ffb95b;
-	font-family: 'Coming Soon', cursive;
-	font-size: 1.2em;
-}
-
-/************************
- BODY 
- ************************/
-body {
-	background-color: orange;
-}
-
-.body-title-font {
-	font-family: 'Coming Soon', cursive;
-}
-
-div.body-title-font input {
-	margin-bottom: 0.5em;
-	padding: 0.3em 0;
-	width: 15em;
-	background-color: #ffb95b;
-	border: 0;
-}
-
-input.type-in {
-	text-indent: 0.5em;
-}
-
-h3.body-title-font {
-	position: relative;
-	left: 3.5em;
-}
-
-div.body-title-font {
-	width: 16em;
-	margin: auto;
-}
-
-#submit-form {
-	width: 15em;
-	padding: 0.3em 0;
-	background-color: #d27800;
-	border: 0;
-	color: #fff;
-}
-
-#submit-form:hover {
-	background-color: #a45e00;
-	color: #ffb95b;
-	cursor: pointer;
-}
-
-footer {
-	clear: both;
-	/*position: fixed;
-	bottom: 0;*/
+    text-decoration: none;
 }
 
 a:hover {
 	cursor: pointer;
 }
 
+body {
+    margin: 0;
+    background-color: #ffecdc
+}
 
-/************************
- image gallery 
- ************************/
-div.img {
-    margin: 5px;
-    padding: 5px;
-    height: auto;
-    width: auto;
-    float: left;
+/************************Header************************/
+#index-header {
+    background-color: #ffb87c;
+}
+#index-header a {
+    color: #a45e00;
+    font-family: 'Coming Soon', cursive;
+    font-size: 1.2em;
+}
+
+/*Top-Right corner*/
+#reg-log {
+    background-color: #ffa052;
+    text-align: right;
+}
+#reg-log a, #greeting {
+    color: #a45e00;
+    font-family: 'Coming Soon', cursive;
+    font-size: 0.8em;
+}
+#reg-log a {
+    display: inline-block;
+    margin: 0.2em 1em 0.2em 1em;
+}
+#greeting {
+    display: inline-block;
+    margin: 0.2em 1em 0.2em 1em;
+}
+
+/*navigations*/
+#index-header ul {
     text-align: center;
-}	
+    margin-top: -5em;
+}
+#index-header li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+
+/*logo*/
+#toplogo {
+    position: relative;
+    top: 3em;
+}
+
+/************************Section************************/
+section {
+    margin: 1em 2em 1em 12em;
+}
+
+/*form*/
+.body-title-font {
+	font-family: 'Coming Soon', cursive;
+}
+div.body-title-font input {
+	margin-bottom: 0.5em;
+	padding: 0.3em 0;
+	width: 18em;
+	background-color: #ffe3ac;
+	border: 0;
+}
+input.type-in {
+	text-indent: 0.5em;
+}
+h3.body-title-font {
+	position: relative;
+	left: 3.5em;
+}
+div.body-title-font {
+	width: 16em;
+	margin: auto;
+}
+#submit-form {
+	width: 18em;
+	padding: 0.3em 0;
+	background-color: #ffb95b;
+	border: 0;
+	color: #fff;
+}
+#submit-form:hover {
+	background-color: #ffa052;
+	cursor: pointer;
+}
+
+/*images of products*/
+div.img {
+	margin: 1em 3em 0 3em;
+	padding: 5px;
+	height: auto;
+	width: auto;
+	float: left;
+	text-align: center;
+}
 
 div.img img {
-    display: inline;
-    margin: 5px;
-    border: 1px solid #ffffff;
+	display: inline;
+	margin: 5px;
 }
-
+/*
 div.img a:hover img {
-    border: 1px solid #0000ff;
+	border:1px solid #0000ff;
+}
+*/
+div.desc {
+	text-align: center;
+	font-weight: normal;
+	width: 120px;
+	margin: 5px;
 }
 
-div.desc {
-  text-align: center;
-  font-weight: normal;
-  width: 120px;
-  margin: 5px;
+/************************Footer************************/
+footer {
+	clear: both;
+	margin: 1em 1em;
 }
